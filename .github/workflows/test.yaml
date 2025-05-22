@@ -26,9 +26,6 @@ jobs:
 
       - name: Start application
         run: npx http-server -p 3000 &
-
-      - name: Change directory
-        run: cd test
       
       - name: Run Test
         uses: cypress-io/github-action@v6
