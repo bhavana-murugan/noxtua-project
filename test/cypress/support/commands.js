@@ -1,7 +1,8 @@
 // Created a custom command for increment/decrement and to validate expected counter value
 
 // use command cy.incrementAndCheck(times,expected value) to directly perform an increment(n-times) and assert expected value
-// use command cy.decrementAndCheck(times, expected value) to directly perform an increment(n-times) and assert expected value
+// use command cy.decrementAndCheck(times, expected value) to directly perform a decrement(n-times) and assert expected value
+
 
 Cypress.Commands.add('incrementAndCheck', (times, expected) => {
   cy.get("#increment-btn").then($btn => {
