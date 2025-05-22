@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Start application
-        run: npx http-server -p 3000
+        run: npx http-server -p 3000 &
       
       - name: Run Test
         uses: cypress-io/github-action@v6
