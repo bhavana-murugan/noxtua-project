@@ -30,7 +30,6 @@ jobs:
       - name: Run Test
         uses: cypress-io/github-action@v6
         with:
-          config-file: ./test/cypress.config.js
           project: ./test
           spec: test/cypress/e2e/test_suite.cy.js
           wait-on: 'http://localhost:3000'
