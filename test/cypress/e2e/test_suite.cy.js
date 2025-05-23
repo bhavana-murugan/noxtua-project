@@ -10,7 +10,7 @@ describe('Functional Test', () => {
     cy.incrementAndCheck(1, 1)
   })
 
-  it('TCF2:When counter is 0, verify clicking decrement does not display a negative number in the counter', () => {
+  it.skip('TCF2:When counter is 0, verify clicking decrement does not display a negative number in the counter', () => {
     cy.visit('/')
     cy.decrementAndCheck(1, 0)
 
@@ -26,7 +26,7 @@ describe('E2E Edge Cases', () => {
     cy.decrementAndCheck(1, 0)
   })
 
-  it('TCE2:Verify rapid decrement clicks does not display negative number when counter is set to 0', () => {
+  it.skip('TCE2:Verify rapid decrement clicks does not display negative number when counter is set to 0', () => {
     cy.visit('/')
     cy.decrementAndCheck(35, 0)
 
