@@ -78,6 +78,7 @@
 
 ## Test Deliverables
 
+The following are the deliverables usually produced during a testing phase. 
 - Test cases (as above)
 - Test execution report
-- Defect log
+- Defect log(can be logged in jira or github)
