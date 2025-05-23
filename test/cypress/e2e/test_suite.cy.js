@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 // I have created custom commands for the below script. commands logic can be found in support/commands.js
-
+// I have set up the baseUrl in the config file 
 
 describe('Functional Test', () => {
 
