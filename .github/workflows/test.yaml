@@ -28,7 +28,9 @@ jobs:
       - name: Run Cypress and save output
         run: |
           set -o pipefail
-          npx cypress run --project ./test --spec test/cypress/e2e/test_suite.cy.js --browser firefox | tee cypress-output.txt
+          npx cypress run --project ./test \
+          --spec test/cypress/e2e/test_suite.cy.js \
+          --browser firefox > test_report.txt
 
       - name: Upload Cypress output
         if: always()
