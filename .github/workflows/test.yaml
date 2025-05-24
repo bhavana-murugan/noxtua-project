@@ -25,17 +25,31 @@ jobs:
         run: npx http-server -p 3000 &
       
 
-      - name: Run Cypress and save output
-        run: |
-          set -o pipefail
-          npx cypress run --project ./test \
-          --spec test/cypress/e2e/test_suite.cy.js \
-          --browser firefox > test_report.txt
+      # - name: Run Cypress and save output
+      #   run: |
+      #     set -o pipefail
+      #     npx cypress run --project ./test \
+      #     --spec test/cypress/e2e/test_suite.cy.js \
+      #     --browser firefox > test_report.md
 
-      - name: Upload Cypress output
-        if: always()
+      - name: Run Test
+        uses: cypress-io/github-action@v6
+        with:
+          project: ./test
+          spec: test/cypress/e2e/test_suite.cy.js
+          wait-on: 'http://localhost:3000'
+          browser: firefox    
+      
+      - name: Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: test_report
-          path: test_report.txt
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
 
+      - name: Upload Artifact     
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore
