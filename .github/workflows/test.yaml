@@ -32,7 +32,7 @@ jobs:
           echo '```' >> test_report.md
           npx cypress run --project ./test \
           --spec test/cypress/e2e/test_suite.cy.js \
-          --browser firefox >> test_report.md
+          --browser firefox | sed 's/\x1b\[[0-9;]*m//g' >> test_report.md
           echo '```' >> test_report.md
 
       - name: Artifacts
