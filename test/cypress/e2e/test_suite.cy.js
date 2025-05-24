@@ -11,7 +11,7 @@ describe('Functional Test', () => {
     cy.incrementAndCheck(1, 1)
   })
 
-  it.skip('TCF2:When counter is 0, verify clicking decrement does not display a negative number in the counter', () => {
+  it('TCF2:When counter is 0, verify clicking decrement does not display a negative number in the counter', () => {
     cy.visit('/')
     cy.decrementAndCheck(1, 0)
 
