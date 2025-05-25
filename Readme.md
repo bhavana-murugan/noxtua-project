@@ -1,8 +1,33 @@
-> **Note:** All test related files are maintained under the folder "test" and the test plan for the web app is in test/test-plan
+# Test Setup
 
+- All test related cypress files are maintained under the folder `test` 
+
+- The **Test Plan** for the web app is in `test/test-plan`
+
+- Github Workflow `test.yaml` runs on every Pull Request to the master branch. Test reports are generated as markdown file and uploaded as artifact which can be found under Workflow Run(for both success and failure checks)
+  
+- Expected failures in the test_suite are marked as skipped for a success run.
+  
+
+
+# Steps to run Cypress locally
+```bash
+npm install
+
+# Make sure you run the Web App before running Cypress
+npx http-server -p 3000
+
+# To run Cypress Spec from CLI
+npx cypress run --project ./test \ 
+          --spec test/cypress/e2e/test_suite.cy.js \
+          --browser firefox
+
+# To run Cypress UI
+cd test
+npx cypress open 
+```
 
 # 1. Task
-
 This is a counter that should only display positive numbers, it should increment and decrement when pressed accordingly
 
 - [x] choose a testing e2e framework (recommended cypress)
@@ -14,7 +39,6 @@ This is a counter that should only display positive numbers, it should increment
 
 
 ### Steps to Run Locally
-
 1. Install dependencies:
 ```bash
 npm install
@@ -23,12 +47,4 @@ npm install
 2. Start the server:
 ```bash
 npx http-server -p 3000
-```
-
-
-### Cypress Setup
-```bash
-npm install
-cd test
-npx cypress open
 ```
